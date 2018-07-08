@@ -128,7 +128,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="OpenCVTest.cpp" />
+    <ClCompile Include="..\..\Drawer\3Dline.cpp" />
+    <ClCompile Include="..\..\Drawer\3DPlane.cpp" />
+    <ClCompile Include="..\..\Drawer\Camera.cpp" />
+    <ClCompile Include="..\..\Drawer\DrawPoint.cpp" />
+    <ClCompile Include="..\..\Drawer\main.cpp" />
+    <ClCompile Include="..\..\Drawer\PointCloud.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Drawer\3Dline.h" />
+    <ClInclude Include="..\..\Drawer\3DPlane.h" />
+    <ClInclude Include="..\..\Drawer\Camera.h" />
+    <ClInclude Include="..\..\Drawer\DrawPoint.h" />
+    <ClInclude Include="..\..\Drawer\PointCloud.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GraphGo.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

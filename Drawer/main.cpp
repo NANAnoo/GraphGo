@@ -35,7 +35,7 @@ int main()
 	Ball1 = new Point3d[1000000];*/
 	DrawPoint *cloud;
 
-	cloud = new DrawPoint[30000];
+	cloud = new DrawPoint[10000];
 
 	p1.x = 0;
 	p1.y = 0;
@@ -71,7 +71,7 @@ int main()
 		double a, b, C, h;
 		h = 0.01;
 
-		for (int i = 1; i < 10000; i++) {
+		for (int i = 1; i < 3333; i++) {
 			a = 15.0;
 			b = 35.0;
 			C = 2.5;
@@ -107,7 +107,7 @@ int main()
 
 		PointCloud* PC = new PointCloud();
 
-		PC->SetCloud(cloud, 30000);
+		PC->SetCloud(cloud, 10000);
 
 		PC->SetCamera(p3, 0, PI / 4);
 

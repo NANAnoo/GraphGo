@@ -106,16 +106,16 @@ void PointCloud::Show() {
 		case 81:
 			Mz = (double)(start - finish) / 50;
 			break;
-		case 2490368:
+		case 56:
 			Myalpha = -(double)(start - finish) / 50 * PI / 180;
 			break;
-		case 2621440:
+		case 53:
 			Myalpha = (double)(start - finish) / 50 * PI / 180;
 			break;
-		case 2424832:
+		case 52:
 			Mzalpha = -(double)(start - finish) / 50 * PI / 180;
 			break;
-		case 2555904:
+		case 54:
 			Mzalpha = (double)(start - finish) / 50 * PI / 180;
 			break;
 		}
@@ -126,7 +126,7 @@ void PointCloud::Show() {
 			Myalpha = 0;
 			Mzalpha = 0;
 		}
-		cout << Key << endl;
+		cout <<"FPS:"<<1000.0/-(start-finish) << endl;
 		start = finish;
 	}
 }
