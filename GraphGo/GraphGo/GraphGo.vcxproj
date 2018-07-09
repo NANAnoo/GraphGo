@@ -74,8 +74,8 @@
     <LibraryPath>F:\Code\opencv\build\x64\vc14\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>F:\Code\opencv\build\include;F:\Code\opencv\build\include\opencv;F:\Code\opencv\build\include\opencv2;$(IncludePath)</IncludePath>
-    <LibraryPath>F:\Code\opencv\build\x64\vc14\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>F:\Code\opencv\include;F:\Code\opencv\build\include;F:\Code\opencv\build\include\opencv;F:\Code\opencv\build\include\opencv2;$(IncludePath)</IncludePath>
+    <LibraryPath>F:\Code\opencv\lib;F:\Code\opencv\build\x64\vc14\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -94,9 +94,10 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>F:\Code\opencv\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>opencv_world341d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_world341d.lib;ceres-debug.lib;ceres.lib;gflags_nothreads_static.lib;gflags_static.lib;glogd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
