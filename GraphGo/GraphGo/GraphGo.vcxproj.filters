@@ -5,50 +5,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Drawer">
-      <UniqueIdentifier>{ed9a97e9-c8dc-450f-a699-374654c124af}</UniqueIdentifier>
+    <Filter Include="tinydir">
+      <UniqueIdentifier>{af7e62f3-b647-4ee7-93ba-c30f4d430828}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Drawer\3Dline.cpp">
-      <Filter>Drawer</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Drawer\3DPlane.cpp">
-      <Filter>Drawer</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Drawer\Camera.cpp">
-      <Filter>Drawer</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Drawer\DrawPoint.cpp">
-      <Filter>Drawer</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Drawer\main.cpp">
-      <Filter>Drawer</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Drawer\PointCloud.cpp">
-      <Filter>Drawer</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Drawer\3Dline.h">
-      <Filter>Drawer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Drawer\3DPlane.h">
-      <Filter>Drawer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Drawer\Camera.h">
-      <Filter>Drawer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Drawer\DrawPoint.h">
-      <Filter>Drawer</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Drawer\PointCloud.h">
-      <Filter>Drawer</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GraphGo.rc">
       <Filter>资源文件</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="tinydir\tinydir.h">
+      <Filter>tinydir</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
 </Project>

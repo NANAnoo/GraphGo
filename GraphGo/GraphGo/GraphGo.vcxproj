@@ -74,8 +74,9 @@
     <LibraryPath>F:\Code\opencv\build\x64\vc14\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>F:\Code\opencv\include;F:\Code\opencv\build\include;F:\Code\opencv\build\include\opencv;F:\Code\opencv\build\include\opencv2;$(IncludePath)</IncludePath>
-    <LibraryPath>F:\Code\opencv\lib;F:\Code\opencv\build\x64\vc14\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>F:\Code\opencv\build\install\\include;F:\Code\opencv\build\install\include\opencv;F:\Code\opencv\build\install\include\opencv2;$(IncludePath)</IncludePath>
+    <LibraryPath>F:\Code\opencv\build\install\x64\vc15\lib;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>F:\Code\opencv\build\install\x64\vc15\bin;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -94,10 +95,10 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>F:\Code\opencv\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>opencv_world341d.lib;ceres-debug.lib;ceres.lib;gflags_nothreads_static.lib;gflags_static.lib;glogd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_aruco341d.lib;opencv_bgsegm341d.lib;opencv_bioinspired341d.lib;opencv_calib3d341d.lib;opencv_ccalib341d.lib;opencv_core341d.lib;opencv_datasets341d.lib;opencv_dnn341d.lib;opencv_dnn_objdetect341d.lib;opencv_dpm341d.lib;opencv_face341d.lib;opencv_features2d341d.lib;opencv_flann341d.lib;opencv_fuzzy341d.lib;opencv_hfs341d.lib;opencv_highgui341d.lib;opencv_imgcodecs341d.lib;opencv_imgproc341d.lib;opencv_img_hash341d.lib;opencv_line_descriptor341d.lib;opencv_ml341d.lib;opencv_objdetect341d.lib;opencv_optflow341d.lib;opencv_phase_unwrapping341d.lib;opencv_photo341d.lib;opencv_plot341d.lib;opencv_reg341d.lib;opencv_rgbd341d.lib;opencv_saliency341d.lib;opencv_shape341d.lib;opencv_stereo341d.lib;opencv_stitching341d.lib;opencv_structured_light341d.lib;opencv_superres341d.lib;opencv_surface_matching341d.lib;opencv_text341d.lib;opencv_tracking341d.lib;opencv_video341d.lib;opencv_videoio341d.lib;opencv_videostab341d.lib;opencv_xfeatures2d341d.lib;opencv_ximgproc341d.lib;opencv_xobjdetect341d.lib;opencv_xphoto341d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -129,22 +130,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Drawer\3Dline.cpp" />
-    <ClCompile Include="..\..\Drawer\3DPlane.cpp" />
-    <ClCompile Include="..\..\Drawer\Camera.cpp" />
-    <ClCompile Include="..\..\Drawer\DrawPoint.cpp" />
-    <ClCompile Include="..\..\Drawer\main.cpp" />
-    <ClCompile Include="..\..\Drawer\PointCloud.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Drawer\3Dline.h" />
-    <ClInclude Include="..\..\Drawer\3DPlane.h" />
-    <ClInclude Include="..\..\Drawer\Camera.h" />
-    <ClInclude Include="..\..\Drawer\DrawPoint.h" />
-    <ClInclude Include="..\..\Drawer\PointCloud.h" />
-  </ItemGroup>
-  <ItemGroup>
     <ResourceCompile Include="GraphGo.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="tinydir\tinydir.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
