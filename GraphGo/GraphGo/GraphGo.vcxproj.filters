@@ -5,8 +5,11 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="tinydir">
-      <UniqueIdentifier>{af7e62f3-b647-4ee7-93ba-c30f4d430828}</UniqueIdentifier>
+    <Filter Include="FileHandler">
+      <UniqueIdentifier>{4e60319c-80aa-4f60-b419-259734a3e4cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KeyPoints">
+      <UniqueIdentifier>{880c9b8e-31d8-4aa0-b44f-98faaadd119d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -15,11 +18,29 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tinydir\tinydir.h">
-      <Filter>tinydir</Filter>
+    <ClInclude Include="FileHandler\FileController.h">
+      <Filter>FileHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="FileHandler\parseName.h">
+      <Filter>FileHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="FileHandler\Reader.h">
+      <Filter>FileHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="FileHandler\Writer.h">
+      <Filter>FileHandler</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="FileHandler\parseName.cpp">
+      <Filter>FileHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="FileHandler\Reader.cpp">
+      <Filter>FileHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="FileHandler\Writer.cpp">
+      <Filter>FileHandler</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -133,9 +133,15 @@
     <ResourceCompile Include="GraphGo.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tinydir\tinydir.h" />
+    <ClInclude Include="FileHandler\FileController.h" />
+    <ClInclude Include="FileHandler\parseName.h" />
+    <ClInclude Include="FileHandler\Reader.h" />
+    <ClInclude Include="FileHandler\Writer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FileHandler\parseName.cpp" />
+    <ClCompile Include="FileHandler\Reader.cpp" />
+    <ClCompile Include="FileHandler\Writer.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

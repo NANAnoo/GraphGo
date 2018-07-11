@@ -4,6 +4,7 @@
 #include <opencv2\calib3d\calib3d.hpp>
 #include <iostream>
 #include "tinydir\tinydir.h"
+#include "FileHandler/FileController.h"
 
 using namespace cv;
 using namespace std;
@@ -20,11 +21,14 @@ void extract_features(
 	Mat image;
 
 	//读取图像，获取图像特征点，并保存
-	Ptr<Feature2D> sift = xfeatures2d::SIFT::create(0, 3, 0.04, 10);
-	//Ptr<Feature2D> sift = xfeatures2d::SURF::create();
+	//Ptr<Feature2D> sift = xfeatures2d::SIFT::create(0, 3, 0.04, 10);
+	Ptr<Feature2D> sift = xfeatures2d::SURF::create();
+
+	if (ReadAllKeyPoints(image_names, key_points_for_all, descriptor_for_all, colors_for_all))
+		return;
 	for (auto it = image_names.begin(); it != image_names.end(); ++it)
 	{
-		image = imread(*it);
+		image = imread(".\\images\\"+*it);
 		if (image.empty()) continue;
 
 		cout << "Extracing features: " << *it << endl;
@@ -47,6 +51,8 @@ void extract_features(
 			colors[i] = image.at<Vec3b>(p.y, p.x);
 		}
 		colors_for_all.push_back(colors);
+
+		WriteKeyPoints(*it,key_points,descriptor,colors);
 	}
 }
 
@@ -268,7 +274,7 @@ void save_structure(string file_name, vector<Mat>& rotations, vector<Mat>& motio
 	fs.release();
 }
 
-void get_objpoints_and_imgpoints(
+int get_objpoints_and_imgpoints(
 	vector<DMatch>& matches,
 	vector<int>& struct_indices, 
 	vector<Point3f>& structure, 
@@ -290,6 +296,11 @@ void get_objpoints_and_imgpoints(
 		object_points.push_back(structure[struct_idx]);
 		image_points.push_back(key_points[train_idx].pt);
 	}
+
+	if (object_points.size() == 0 || image_points.size() == 0)
+		return 0;
+
+	return 1;
 }
 
 void fusion_structure(
@@ -382,29 +393,9 @@ int init_structure(
 	return 1;
 }
 
-void get_file_names(string dir_name, vector<string> & names)
-{
-	names.clear();
-	tinydir_dir dir;
-	tinydir_open(&dir, dir_name.c_str());
-
-	while (dir.has_next)
-	{
-		tinydir_file file;
-		tinydir_readfile(&dir, &file);
-		if (!file.is_dir)
-		{
-			names.push_back(file.path);
-		}
-		tinydir_next(&dir);
-	}
-	tinydir_close(&dir);
-}
-
 void main()
 {
-	vector<string> img_names;
-	get_file_names("images", img_names);
+	vector<string> img_names = { "0001.png","0002.png","0003.png" };
 
 	//内参矩阵
 	Mat K(Matx33d(
@@ -449,14 +440,8 @@ void main()
 		//Mat mask;
 
 		//获取第i幅图像中匹配点对应的三维点，以及在与之对应的图像中的像素点
-		get_objpoints_and_imgpoints(
-			matches_for_all[i], 
-			correspond_struct_idx[i], 
-			structure,
-			key_points_for_all[match_idx[i]],
-			object_points,
-			image_points
-			);
+		if (get_objpoints_and_imgpoints(matches_for_all[i], correspond_struct_idx[i], structure, key_points_for_all[match_idx[i]], object_points, image_points) == 0)
+			continue;
 
 		//求解变换矩阵
 		solvePnPRansac(object_points, image_points, K, noArray(), r, T);
