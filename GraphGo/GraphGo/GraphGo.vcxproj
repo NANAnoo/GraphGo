@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -133,16 +133,25 @@
     <ResourceCompile Include="GraphGo.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ESController.cpp" />
+    <ClCompile Include="Extract.cpp" />
+    <ClCompile Include="FileHandler\parseName.cpp" />
+    <ClCompile Include="FileHandler\Reader.cpp" />
+    <ClCompile Include="FileHandler\Writer.cpp" />
+    <ClCompile Include="GetPoints.cpp" />
+    <ClCompile Include="SaveStructure.cpp" />
+    <ClCompile Include="Transform.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ESController.h" />
+    <ClInclude Include="Extract.h" />
     <ClInclude Include="FileHandler\FileController.h" />
     <ClInclude Include="FileHandler\parseName.h" />
     <ClInclude Include="FileHandler\Reader.h" />
     <ClInclude Include="FileHandler\Writer.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="FileHandler\parseName.cpp" />
-    <ClCompile Include="FileHandler\Reader.cpp" />
-    <ClCompile Include="FileHandler\Writer.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClInclude Include="GetPoints.h" />
+    <ClInclude Include="SaveStructure.h" />
+    <ClInclude Include="Transform.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
