@@ -45,6 +45,7 @@
     <ClCompile Include="ESController.cpp">
       <Filter>ExtractAndStore</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileHandler\FileController.h">

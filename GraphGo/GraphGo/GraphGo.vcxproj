@@ -139,6 +139,7 @@
     <ClCompile Include="FileHandler\Reader.cpp" />
     <ClCompile Include="FileHandler\Writer.cpp" />
     <ClCompile Include="GetPoints.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="SaveStructure.cpp" />
     <ClCompile Include="Transform.cpp" />
   </ItemGroup>
