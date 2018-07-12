@@ -14,3 +14,11 @@ bool WriteKeyPoints
 	Mat& descriptor,
 	vector<Vec3b> colors
 );
+
+bool WriteKeyPointsForAll
+(
+	vector<string>& imgnames,
+	vector<vector<KeyPoint>>& key_points_for_all,
+	vector<Mat>& descriptor_for_all,
+	vector<vector<Vec3b>>& colors_for_all
+);

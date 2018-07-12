@@ -130,45 +130,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <ClCompile Include="..\..\Drawer\3Dline.cpp" />
-    <ClCompile Include="..\..\Drawer\3DPlane.cpp" />
-    <ClCompile Include="..\..\Drawer\Camera.cpp" />
-    <ClCompile Include="..\..\Drawer\DrawPoint.cpp" />
-    <ClCompile Include="..\..\Drawer\main.cpp" />
-    <ClCompile Include="..\..\Drawer\PointCloud.cpp" />
-    <ClCompile Include="..\..\interfac\interface\HomeDlg.cpp" />
-    <ClCompile Include="..\..\interfac\interface\interface.cpp" />
-    <ClCompile Include="..\..\interfac\interface\interfaceDlg.cpp" />
-    <ClCompile Include="..\..\interfac\interface\LoginDlg.cpp" />
-    <ClCompile Include="..\..\interfac\interface\RegistDlg.cpp" />
-    <ClCompile Include="..\..\interfac\interface\RegisterDlg.cpp" />
-    <ClCompile Include="..\..\interfac\interface\ResultDlg.cpp" />
-    <ClCompile Include="..\..\interfac\interface\stdafx.cpp" />
-    <ClCompile Include="..\..\interfac\interface\T.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Drawer\3Dline.h" />
-    <ClInclude Include="..\..\Drawer\3DPlane.h" />
-    <ClInclude Include="..\..\Drawer\Camera.h" />
-    <ClInclude Include="..\..\Drawer\DrawPoint.h" />
-    <ClInclude Include="..\..\Drawer\PointCloud.h" />
-    <ClInclude Include="..\..\interfac\interface\HomeDlg.h" />
-    <ClInclude Include="..\..\interfac\interface\interface.h" />
-    <ClInclude Include="..\..\interfac\interface\interfaceDlg.h" />
-    <ClInclude Include="..\..\interfac\interface\LoginDlg.h" />
-    <ClInclude Include="..\..\interfac\interface\RegistDlg.h" />
-    <ClInclude Include="..\..\interfac\interface\RegisterDlg.h" />
-    <ClInclude Include="..\..\interfac\interface\resource.h" />
-    <ClInclude Include="..\..\interfac\interface\ResultDlg.h" />
-    <ClInclude Include="..\..\interfac\interface\stdafx.h" />
-    <ClInclude Include="..\..\interfac\interface\T.h" />
-    <ClInclude Include="..\..\interfac\interface\targetver.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="..\..\interfac\interface\interface.rc" />
-    <ResourceCompile Include="GraphGo.rc" />
-=======
     <ResourceCompile Include="GraphGo.rc" />
   </ItemGroup>
   <ItemGroup>
@@ -192,12 +153,6 @@
     <ClInclude Include="GetPoints.h" />
     <ClInclude Include="SaveStructure.h" />
     <ClInclude Include="Transform.h" />
->>>>>>> 283bf3f06e3c06d8ab33a420a91afec3a10f20c3
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\interfac\interface\interface.vcxproj" />
-    <None Include="..\..\interfac\interface\interface.vcxproj.filters" />
-    <None Include="..\..\interfac\interface\interface.vcxproj.user" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

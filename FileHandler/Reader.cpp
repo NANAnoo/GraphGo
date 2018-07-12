@@ -1,6 +1,6 @@
 #include "Reader.h"
 
-bool ReadPointCloud(string filename, vector<Mat>&rotations, vector<Mat>&motions, vector<Point3f>&points, vector<Vec3b>&colors)
+bool ReadYML(string filename, vector<Mat>&rotations, vector<Mat>&motions, vector<Point3f>&points, vector<Vec3b>&colors)
 {
 	FileNode Points, Colors;
 	Point3f P;
@@ -89,4 +89,14 @@ bool ReadKeyPoints(string & imgname, vector<KeyPoint>& key_points, Mat & descrip
 	}
 
 	return true;
+}
+
+bool ReadAllKeyPoints(vector<string>& image_names, vector<vector<KeyPoint>>& key_points_for_all, vector<Mat>& descriptor_for_all, vector<vector<Vec3b>>& colors_for_all)
+{
+	for (int i = 0; i < image_names.size(); i++) {
+		if (ReadKeyPoints(image_names[i], key_points_for_all[i], descriptor_for_all[i], colors_for_all[i]))
+			cout << image_names[i] << " read successful!";
+		else
+			cout << image_names[i] << " read false";
+	}
 }
