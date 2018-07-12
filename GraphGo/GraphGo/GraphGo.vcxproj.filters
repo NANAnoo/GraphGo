@@ -5,32 +5,50 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Drawer">
-      <UniqueIdentifier>{ed9a97e9-c8dc-450f-a699-374654c124af}</UniqueIdentifier>
+    <Filter Include="FileHandler">
+      <UniqueIdentifier>{4e60319c-80aa-4f60-b419-259734a3e4cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="KeyPoints">
+      <UniqueIdentifier>{880c9b8e-31d8-4aa0-b44f-98faaadd119d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ExtractAndStore">
+      <UniqueIdentifier>{5e708810-170a-4163-ab71-0f3b565fc09a}</UniqueIdentifier>
     </Filter>
     <Filter Include="interfac">
       <UniqueIdentifier>{d516ae5f-64b1-4d37-969b-4316e037e6c2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Drawer\3Dline.cpp">
-      <Filter>Drawer</Filter>
+    <ResourceCompile Include="GraphGo.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FileHandler\parseName.cpp">
+      <Filter>FileHandler</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Drawer\3DPlane.cpp">
-      <Filter>Drawer</Filter>
+    <ClCompile Include="FileHandler\Reader.cpp">
+      <Filter>FileHandler</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Drawer\Camera.cpp">
-      <Filter>Drawer</Filter>
+    <ClCompile Include="FileHandler\Writer.cpp">
+      <Filter>FileHandler</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Drawer\DrawPoint.cpp">
-      <Filter>Drawer</Filter>
+    <ClCompile Include="Extract.cpp">
+      <Filter>ExtractAndStore</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Drawer\main.cpp">
-      <Filter>Drawer</Filter>
+    <ClCompile Include="GetPoints.cpp">
+      <Filter>ExtractAndStore</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Drawer\PointCloud.cpp">
-      <Filter>Drawer</Filter>
+    <ClCompile Include="SaveStructure.cpp">
+      <Filter>ExtractAndStore</Filter>
     </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>ExtractAndStore</Filter>
+    </ClCompile>
+    <ClCompile Include="ESController.cpp">
+      <Filter>ExtractAndStore</Filter>
+    </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="..\..\interfac\interface\HomeDlg.cpp">
       <Filter>interfac</Filter>
     </ClCompile>
@@ -58,23 +76,39 @@
     <ClCompile Include="..\..\interfac\interface\T.cpp">
       <Filter>interfac</Filter>
     </ClCompile>
+=======
+    <ClCompile Include="main.cpp" />
+>>>>>>> 283bf3f06e3c06d8ab33a420a91afec3a10f20c3
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Drawer\3Dline.h">
-      <Filter>Drawer</Filter>
+    <ClInclude Include="FileHandler\FileController.h">
+      <Filter>FileHandler</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Drawer\3DPlane.h">
-      <Filter>Drawer</Filter>
+    <ClInclude Include="FileHandler\parseName.h">
+      <Filter>FileHandler</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Drawer\Camera.h">
-      <Filter>Drawer</Filter>
+    <ClInclude Include="FileHandler\Reader.h">
+      <Filter>FileHandler</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Drawer\DrawPoint.h">
-      <Filter>Drawer</Filter>
+    <ClInclude Include="FileHandler\Writer.h">
+      <Filter>FileHandler</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Drawer\PointCloud.h">
-      <Filter>Drawer</Filter>
+    <ClInclude Include="Extract.h">
+      <Filter>ExtractAndStore</Filter>
     </ClInclude>
+    <ClInclude Include="GetPoints.h">
+      <Filter>ExtractAndStore</Filter>
+    </ClInclude>
+    <ClInclude Include="SaveStructure.h">
+      <Filter>ExtractAndStore</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>ExtractAndStore</Filter>
+    </ClInclude>
+    <ClInclude Include="ESController.h">
+      <Filter>ExtractAndStore</Filter>
+    </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="..\..\interfac\interface\HomeDlg.h">
       <Filter>interfac</Filter>
     </ClInclude>
@@ -127,5 +161,7 @@
     <None Include="..\..\interfac\interface\interface.vcxproj.user">
       <Filter>interfac</Filter>
     </None>
+=======
+>>>>>>> 283bf3f06e3c06d8ab33a420a91afec3a10f20c3
   </ItemGroup>
 </Project>
