@@ -8,6 +8,9 @@
     <Filter Include="Drawer">
       <UniqueIdentifier>{ed9a97e9-c8dc-450f-a699-374654c124af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="interfac">
+      <UniqueIdentifier>{d516ae5f-64b1-4d37-969b-4316e037e6c2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Drawer\3Dline.cpp">
@@ -28,6 +31,33 @@
     <ClCompile Include="..\..\Drawer\PointCloud.cpp">
       <Filter>Drawer</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\interfac\interface\HomeDlg.cpp">
+      <Filter>interfac</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\interfac\interface\interface.cpp">
+      <Filter>interfac</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\interfac\interface\interfaceDlg.cpp">
+      <Filter>interfac</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\interfac\interface\LoginDlg.cpp">
+      <Filter>interfac</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\interfac\interface\RegistDlg.cpp">
+      <Filter>interfac</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\interfac\interface\RegisterDlg.cpp">
+      <Filter>interfac</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\interfac\interface\ResultDlg.cpp">
+      <Filter>interfac</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\interfac\interface\stdafx.cpp">
+      <Filter>interfac</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\interfac\interface\T.cpp">
+      <Filter>interfac</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Drawer\3Dline.h">
@@ -45,10 +75,57 @@
     <ClInclude Include="..\..\Drawer\PointCloud.h">
       <Filter>Drawer</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\interfac\interface\HomeDlg.h">
+      <Filter>interfac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\interfac\interface\interface.h">
+      <Filter>interfac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\interfac\interface\interfaceDlg.h">
+      <Filter>interfac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\interfac\interface\LoginDlg.h">
+      <Filter>interfac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\interfac\interface\RegistDlg.h">
+      <Filter>interfac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\interfac\interface\RegisterDlg.h">
+      <Filter>interfac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\interfac\interface\resource.h">
+      <Filter>interfac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\interfac\interface\ResultDlg.h">
+      <Filter>interfac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\interfac\interface\stdafx.h">
+      <Filter>interfac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\interfac\interface\T.h">
+      <Filter>interfac</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\interfac\interface\targetver.h">
+      <Filter>interfac</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GraphGo.rc">
       <Filter>资源文件</Filter>
     </ResourceCompile>
+    <ResourceCompile Include="..\..\interfac\interface\interface.rc">
+      <Filter>interfac</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\interfac\interface\interface.vcxproj">
+      <Filter>interfac</Filter>
+    </None>
+    <None Include="..\..\interfac\interface\interface.vcxproj.filters">
+      <Filter>interfac</Filter>
+    </None>
+    <None Include="..\..\interfac\interface\interface.vcxproj.user">
+      <Filter>interfac</Filter>
+    </None>
   </ItemGroup>
 </Project>
