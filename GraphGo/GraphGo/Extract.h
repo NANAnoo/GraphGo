@@ -13,3 +13,7 @@ void extract_features(vector<string>& image_names,vector<vector<KeyPoint>>& key_
 int match_features(Mat& query, Mat& train, vector<DMatch>& matches);
 
 void match_features_for_all(vector<Mat>& descriptor_for_all, vector<vector<DMatch>>& matches_for_all, vector<int>& match_idx);
+
+int is_circle(int i, int j, vector<int>& match_idx);
+
+void sort(vector<int>& match_idx,vector<int>& sort_matches);

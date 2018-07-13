@@ -1,6 +1,6 @@
 #include "SaveStructure.h"
 
-int init_structure(Mat K,vector<vector<KeyPoint>>& key_points_for_all,vector<vector<Vec3b>>& colors_for_all,vector<vector<DMatch>>& matches_for_all,vector<Point3f>& structure,vector<vector<int>>& correspond_struct_idx,vector<Vec3b>& colors,vector<Mat>& rotations,vector<Mat>& motions,vector<int>& match_idx,int idx)
+int init_structure(Mat K, vector<vector<KeyPoint>>& key_points_for_all, vector<vector<Vec3b>>& colors_for_all, vector<vector<DMatch>>& matches_for_all, vector<Point3f>& structure, vector<vector<int>>& correspond_struct_idx, vector<Vec3b>& colors, vector<Mat>& rotations, vector<Mat>& motions, vector<int>& match_idx, int idx)
 {
 	//计算第一对图像之间的变换矩阵
 	vector<Point2f> p1, p2;
@@ -23,8 +23,8 @@ int init_structure(Mat K,vector<vector<KeyPoint>>& key_points_for_all,vector<vec
 	Mat T0 = Mat::zeros(3, 1, CV_64FC1);
 	reconstruct(K, R0, T0, R, T, p1, p2, structure);
 	//保存变换矩阵
-	rotations = { R0, R };
-	motions = { T0, T };
+	rotations = { R0,R };
+	motions = {T0,T};
 
 	//将correspond_struct_idx的大小初始化为与key_points_for_all完全一致
 	correspond_struct_idx.clear();

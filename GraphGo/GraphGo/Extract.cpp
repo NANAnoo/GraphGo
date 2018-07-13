@@ -89,19 +89,72 @@ void match_features_for_all(vector<Mat>& descriptor_for_all, vector<vector<DMatc
 	matches_for_all.clear();
 
 	vector<DMatch> matches;
+	vector<int> matched;
+	int m = 0;
+
+	for (int i = 0; i < match_idx.size(); ++i) {
+		match_idx[i] = -1;
+	}
 	// n个图像，每一个图像都与其他未能成功匹配的图像进行一次匹配
-	for (int i = 0; i < descriptor_for_all.size() - 1; ++i)
+	for (int i = 0; i < descriptor_for_all.size(); ++i)
 	{
-		match_idx.push_back(0);
-		for (int j = i + 1; j < descriptor_for_all.size(); ++j)
+		for (int j = 0; j < descriptor_for_all.size(); ++j)
 		{
+			m = 0;
+			if (j == i)
+				continue;
+			for (int s = 0; s < matched.size(); ++s) {
+				if (j == matched[s])
+					 m = 1;
+			}
+			if (m == 1)
+				continue;
+			if (i > j) {
+				if (is_circle(i, j, match_idx) == 1)
+					continue;
+			}
 			if (match_features(descriptor_for_all[i], descriptor_for_all[j], matches) == 0)
 				match_idx[i] = j;
-
 		}
 
 		cout << "Matched images " << i << " - " << match_idx[i] << endl;
 		matches_for_all.push_back(matches);
+		matched.push_back(match_idx[i]);
 		matches.clear();
+	}
+}
+
+int is_circle(int i, int j, vector<int>& match_idx) {
+	if (j == i)
+		return 1;
+	if (match_idx[j] == -1)
+		return 0;
+	if (is_circle(i, match_idx[j], match_idx) == 1)
+		return 1;
+	return 0;
+}
+
+void sort(vector<int>& match_idx, vector<int>& sort_matches) {
+	int begin;
+	int count = 0;
+	int total = 0;
+	for (int i = 0; i < match_idx.size(); ++i) {
+		if (match_idx[i] >= 0) {
+			count += i + match_idx[i];
+		}
+		else
+			count += i;
+		total += i * 2;
+	}
+	begin = total - count;
+
+	sort_matches.push_back(begin);
+
+	for (int i = 0; i < match_idx.size() - 1; ++i) {
+		begin = match_idx[begin];
+		sort_matches.push_back(begin);
+	}
+	for (int i = 0; i < sort_matches.size(); ++i) {
+		cout << sort_matches[i] << endl;
 	}
 }

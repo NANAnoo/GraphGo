@@ -57,7 +57,8 @@ int get_objpoints_and_imgpoints(vector<DMatch>& matches,vector<int>& struct_indi
 		int train_idx = matches[i].trainIdx;
 
 		int struct_idx = struct_indices[query_idx];
-		if (struct_idx < 0) continue;
+		if (struct_idx < 0) 
+			continue;
 
 		object_points.push_back(structure[struct_idx]);
 		image_points.push_back(key_points[train_idx].pt);
