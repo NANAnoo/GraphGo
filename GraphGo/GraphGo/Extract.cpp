@@ -1,4 +1,6 @@
 #include "Extract.h"
+#include <opencv2/cudafeatures2d.hpp>
+#include <opencv2/cudaimgproc.hpp>
 
 void extract_features(vector<string>& image_names,vector<vector<KeyPoint>>& key_points_for_all,vector<Mat>& descriptor_for_all,vector<vector<Vec3b>>& colors_for_all)
 {
@@ -9,7 +11,7 @@ void extract_features(vector<string>& image_names,vector<vector<KeyPoint>>& key_
 	//读取图像，获取图像特征点，并保存
 	//Ptr<Feature2D> sift = xfeatures2d::SIFT::create(0, 3, 0.04, 10);
 	Ptr<Feature2D> sift = xfeatures2d::SURF::create();
-
+	//Ptr<cuda::ORB>ffd= cuda::ORB::create(500, 1.2f, 10, 51, 0, 2, 0, 31, 20, true);
 	if (ReadAllKeyPoints(image_names, key_points_for_all, descriptor_for_all, colors_for_all))
 		return;
 	for (auto it = image_names.begin(); it != image_names.end(); ++it)
@@ -21,9 +23,16 @@ void extract_features(vector<string>& image_names,vector<vector<KeyPoint>>& key_
 
 		vector<KeyPoint> key_points;
 		Mat descriptor;
+		//cuda::GpuMat Gdescriptor;
+		//cuda::GpuMat Goa;
+		//cuda::GpuMat Gimage(image);
+		//Gimage.upload(image);
+		
 		//偶尔出现内存分配失败的错误
 		sift->detectAndCompute(image, noArray(), key_points, descriptor);
-
+		//ffd->detectAndComputeAsync(Gimage, cuda::GpuMat(), Goa , Gdescriptor);
+		
+		//Gdescriptor.download(descriptor);
 		//特征点过少，则排除该图像
 		if (key_points.size() <= 10) continue;
 
@@ -46,8 +55,11 @@ int match_features(Mat& query, Mat& train, vector<DMatch>& matches)
 {
 	vector<vector<DMatch>> knn_matches;
 	vector<DMatch> temp_matches;
-	BFMatcher matcher(NORM_L2);
-	matcher.knnMatch(query, train, knn_matches, 2);
+	//BFMatcher matcher(NORM_L2);
+	cuda::GpuMat Gquery(query);
+	cuda::GpuMat Gtrain(train);
+	Ptr<cuda::DescriptorMatcher> matcher = cuda::DescriptorMatcher::createBFMatcher(NORM_L2);
+	matcher->knnMatch(Gquery, Gtrain, knn_matches, 2);
 
 	//获取满足Ratio Test的最小匹配的距离
 	float min_dist = FLT_MAX;
@@ -153,8 +165,5 @@ void sort(vector<int>& match_idx, vector<int>& sort_matches) {
 	for (int i = 0; i < match_idx.size() - 1; ++i) {
 		begin = match_idx[begin];
 		sort_matches.push_back(begin);
-	}
-	for (int i = 0; i < sort_matches.size(); ++i) {
-		cout << sort_matches[i] << endl;
 	}
 }

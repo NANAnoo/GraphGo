@@ -64,7 +64,7 @@ int get_objpoints_and_imgpoints(vector<DMatch>& matches,vector<int>& struct_indi
 		image_points.push_back(key_points[train_idx].pt);
 	}
 
-	if (object_points.size() == 0 || image_points.size() == 0)
+	if (object_points.size() <= 4 || image_points.size() <= 4)
 		return 0;
 
 	return 1;
