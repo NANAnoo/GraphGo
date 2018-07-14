@@ -133,6 +133,7 @@
     <ResourceCompile Include="GraphGo.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Camera\GetCameraMat.cpp" />
     <ClCompile Include="ESController.cpp" />
     <ClCompile Include="Extract.cpp" />
     <ClCompile Include="FileHandler\parseName.cpp" />
@@ -144,6 +145,7 @@
     <ClCompile Include="Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Camera\GetCameraMat.h" />
     <ClInclude Include="ESController.h" />
     <ClInclude Include="Extract.h" />
     <ClInclude Include="FileHandler\FileController.h" />

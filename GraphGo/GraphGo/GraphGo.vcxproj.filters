@@ -14,6 +14,9 @@
     <Filter Include="ExtractAndStore">
       <UniqueIdentifier>{5e708810-170a-4163-ab71-0f3b565fc09a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{2219ecce-dbf7-44c3-8b67-e95c911da8b9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GraphGo.rc">
@@ -46,6 +49,9 @@
       <Filter>ExtractAndStore</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Camera\GetCameraMat.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileHandler\FileController.h">
@@ -74,6 +80,9 @@
     </ClInclude>
     <ClInclude Include="ESController.h">
       <Filter>ExtractAndStore</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera\GetCameraMat.h">
+      <Filter>Camera</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

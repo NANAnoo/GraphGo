@@ -2,4 +2,4 @@
 #include "GetPoints.h"
 #include "SaveStructure.h"
 
-void Display();
+void read_images(vector<string>& img_names);
