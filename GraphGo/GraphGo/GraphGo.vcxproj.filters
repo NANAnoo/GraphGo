@@ -49,7 +49,7 @@
       <Filter>ExtractAndStore</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Camera\GetCameraMat.cpp">
+    <ClCompile Include="GetCameraMat.cpp">
       <Filter>Camera</Filter>
     </ClCompile>
   </ItemGroup>
@@ -81,7 +81,7 @@
     <ClInclude Include="ESController.h">
       <Filter>ExtractAndStore</Filter>
     </ClInclude>
-    <ClInclude Include="Camera\GetCameraMat.h">
+    <ClInclude Include="GetCameraMat.h">
       <Filter>Camera</Filter>
     </ClInclude>
   </ItemGroup>

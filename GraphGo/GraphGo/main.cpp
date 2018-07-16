@@ -1,15 +1,27 @@
 #include "ESController.h"
+#include "GetCameraMat.h"
 
 void main()
 {
 	//vector<string> img_names = { "0001.png","0002.png","0003.png" };
-	vector<string> img_names = { "11.jpg","22.jpg","33.jpg","44.jpg","55.jpg","66.jpg","77.jpg" };
-
+	vector<string> img_names = { "1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg" };
+	vector<string> camera_names = { ".//Camera//1.jpg",".//Camera//2.jpg",".//Camera//3.jpg",".//Camera//4.jpg",".//Camera//5.jpg",".//Camera//6.jpg",".//Camera//7.jpg" };
+	
 	//ÄÚ²Î¾ØÕó
-	Mat K(Matx33d(
-		1121.769042997503, 0, 630.0723826443412,
-		0, 1083.557445837651, 464.4345257679684,
-		0, 0, 1));
+	Mat K(Matx33d(get_camera_mat(camera_names)));
+
+	/*Mat K(Matx33d(
+		0, 0, 0,
+		0, 0, 0,
+		0, 0, 0));
+	Mat ans = get_camera_mat(camera_names);
+
+	for (int i = 0; i < 3; ++i) {
+		for (int j = 0; j < 3; ++j) {
+			K.at<double>(i, j) = ans.at<double>(i, j);
+			cout << K.at<double>(i, j);
+		}
+	}*/
 	//Mat K(Matx33d(
 	//	2759.48, 0, 1520.69,
 	//	0, 2764.16, 1006.81,
@@ -104,4 +116,5 @@ void main()
 		save_structure(".\\structure.yml", final_rotations, final_motions, structure, colors);
 
 	system("PAUSE");
+
 }

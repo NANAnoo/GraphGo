@@ -133,25 +133,25 @@
     <ResourceCompile Include="GraphGo.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Camera\GetCameraMat.cpp" />
     <ClCompile Include="ESController.cpp" />
     <ClCompile Include="Extract.cpp" />
     <ClCompile Include="FileHandler\parseName.cpp" />
     <ClCompile Include="FileHandler\Reader.cpp" />
     <ClCompile Include="FileHandler\Writer.cpp" />
+    <ClCompile Include="GetCameraMat.cpp" />
     <ClCompile Include="GetPoints.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SaveStructure.cpp" />
     <ClCompile Include="Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Camera\GetCameraMat.h" />
     <ClInclude Include="ESController.h" />
     <ClInclude Include="Extract.h" />
     <ClInclude Include="FileHandler\FileController.h" />
     <ClInclude Include="FileHandler\parseName.h" />
     <ClInclude Include="FileHandler\Reader.h" />
     <ClInclude Include="FileHandler\Writer.h" />
+    <ClInclude Include="GetCameraMat.h" />
     <ClInclude Include="GetPoints.h" />
     <ClInclude Include="SaveStructure.h" />
     <ClInclude Include="Transform.h" />
