@@ -1,8 +1,9 @@
 #include "GetCameraMat.h"
 
-Mat get_camera_mat(vector<string>& image_names)
+Mat get_camera_mat(vector<string>& image_names,string filename)
 {
-	ofstream fout("caliberation_result.txt");  /* 保存标定结果的文件 */
+	//ofstream fout("caliberation_result.txt");  /* 保存标定结果的文件 */
+	FileStorage fs(filename, FileStorage::WRITE);
 											   //读取每一幅图像，从中提取出角点，然后对角点进行亚像素精确化	
 	cout << "开始提取角点………………";
 	int image_count = 0;  /* 图像数量 */
@@ -109,8 +110,8 @@ Mat get_camera_mat(vector<string>& image_names)
 	/* 开始标定 */
 	calibrateCamera(object_points, image_points_seq, image_size, cameraMatrix, distCoeffs, rvecsMat, tvecsMat, 0);
 	cout << "标定完成！\n";
-	fout << "相机内参数矩阵：" << endl;
-	fout << cameraMatrix << endl << endl;
+
+	fs << "Camera" << cameraMatrix;
 
 	return cameraMatrix;
 }

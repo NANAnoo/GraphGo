@@ -8,4 +8,4 @@
 using namespace cv;
 using namespace std;
 
-Mat get_camera_mat(vector<string>& image_names);
+Mat get_camera_mat(vector<string>& image_names, string filename);

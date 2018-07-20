@@ -4,8 +4,8 @@
 void main()
 {
 	//vector<string> img_names = { "0001.png","0002.png","0003.png" };
-	vector<string> img_names = { "1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg" };
-	vector<string> camera_names = { ".//Camera//1.jpg",".//Camera//2.jpg",".//Camera//3.jpg",".//Camera//4.jpg",".//Camera//5.jpg",".//Camera//6.jpg",".//Camera//7.jpg" };
+	vector<string> img_names = { "01.jpg","02.jpg","03.jpg","04.jpg","05.jpg","06.jpg","07.jpg" };
+	vector<string> camera_names = { ".//Camera//1.jpg",".//Camera//2.jpg",".//Camera//3.jpg",".//Camera//4.jpg",".//Camera//5.jpg" };
 	
 	//ÄÚ²Î¾ØÕó
 	Mat K(Matx33d(get_camera_mat(camera_names)));
