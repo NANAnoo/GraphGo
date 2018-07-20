@@ -74,8 +74,8 @@
     <LibraryPath>F:\Code\opencv\build\x64\vc14\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>F:\Code\opencv\build\install\\include;F:\Code\opencv\build\install\include\opencv;F:\Code\opencv\build\install\include\opencv2;$(IncludePath)</IncludePath>
-    <LibraryPath>F:\Code\opencv\build\install\x64\vc15\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>F:\Code\opencv\build\install\include;F:\Code\opencv\build\install\include\opencv;C:\Users\CYX\Desktop\Ceres\include;F:\Code\opencv\build\install\include\opencv2;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\CYX\Desktop\Ceres\lib;F:\Code\opencv\build\install\x64\vc15\lib;$(LibraryPath)</LibraryPath>
     <ExecutablePath>F:\Code\opencv\build\install\x64\vc15\bin;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

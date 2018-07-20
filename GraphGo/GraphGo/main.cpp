@@ -6,9 +6,10 @@ void main()
 	//vector<string> img_names = { "0001.png","0002.png","0003.png" };
 	vector<string> img_names = { "01.jpg","02.jpg","03.jpg","04.jpg","05.jpg","06.jpg","07.jpg" };
 	vector<string> camera_names = { ".//Camera//1.jpg",".//Camera//2.jpg",".//Camera//3.jpg",".//Camera//4.jpg",".//Camera//5.jpg" };
+	string file_name = "camera.txt";
 	
 	//ÄÚ²Î¾ØÕó
-	Mat K(Matx33d(get_camera_mat(camera_names)));
+	Mat K(Matx33d(get_camera_mat(camera_names,file_name)));
 
 	/*Mat K(Matx33d(
 		0, 0, 0,
@@ -108,8 +109,6 @@ void main()
 		final_rotations.push_back(rotations[i]);
 		final_motions.push_back(motions[i]);
 	}
-
-
 
 	//±£´æ
 	if (structure.size() != 0)
